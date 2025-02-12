@@ -9,7 +9,6 @@
 int main()
 {
 	const float PI = 3.1415;
-	PI = 4.5;
 	printf("%.5f\n",PI);
 	printf("Hello world, I am back ");
 }
