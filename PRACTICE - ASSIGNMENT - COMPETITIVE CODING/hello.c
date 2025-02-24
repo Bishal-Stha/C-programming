@@ -8,7 +8,9 @@
 #include<stdio.h>
 int main()
 {
-	const float PI = 3.1415;
-	printf("%.5f\n",PI);
-	printf("Hello world, I am back ");
+	int sum=0;
+for(int i=2;i<=5; i+=2 ){
+	sum += i;
+}
+printf("sum is %d",sum);
 }
