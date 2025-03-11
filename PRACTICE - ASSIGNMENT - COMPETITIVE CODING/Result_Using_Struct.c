@@ -1,5 +1,7 @@
 #include<stdio.h>
-char *passOrFail(float percentage, float marks[]);
+#include<string.h>
+// #include<conio.h>
+char const *passOrFail(float percentage, float marks[]);
 int main()
 {
     int n,sum;
@@ -13,6 +15,7 @@ int main()
         float marks[5];
     } st[n];
 
+
     //Value Assignment
     for(int i=0; i<n; i++){
         printf("Enter your Roll No: ");
@@ -20,6 +23,9 @@ int main()
 
         printf("Enter your name: ");
         scanf("%s", st[i].name);
+        // fgets(st[i].name,sizeof(st[i].name),stdin);
+        // gets(st[i].name);
+        // getchar();
 
         printf("Enter your marks of following subjects\n");
         for(int j=0; j<5; j++){
@@ -41,12 +47,15 @@ int main()
 
     printf("\n");
 
-printf("Roll No\t Name\t\t Physics Math\t C\t DL\t IT\t [%%]\t Status\n");
+printf("Roll No\t Name\t Physics Math\t C\t DL\t IT\t [%%]\t Status\n");
 for(int i=0; i<n; i++){
-    printf("%d\t %s\t %.2f\t %.2f\t %.2f\t %.2f\t %.2f\t %.2f\t %s\n",st[i].id, st[i].name, st[i].marks[0],st[i].marks[1],st[i].marks[2],st[i].marks[3],st[i].marks[4],percentage[i],passOrFail(percentage[i],percentage));
+    printf("%d\t %s\t %.2f\t %.2f\t %.2f\t %.2f\t %.2f\t %.2f\t %s\n",st[i].id, st[i].name, st[i].marks[0],st[i].marks[1],st[i].marks[2],st[i].marks[3],st[i].marks[4],percentage[i],passOrFail(percentage[i],st[i].marks));
 }
 }
 
-    char *passOrFail(float percentage, float marks[]) {
-        return (percentage >= 32) && (marks[0] >= 24 && marks[1] >= 24 && marks[2] >= 24 && marks[3] >= 24 && marks[4] >= 24 ) ? "Pass" : "Fail";  // Fixed function
-    }
+const char *passOrFail(float percentage, float marks[]) {
+    return (percentage >= 32) && 
+           (marks[0] >= 24 && marks[1] >= 24 && marks[2] >= 24 && 
+            marks[3] >= 24 && marks[4] >= 24) ? "Pass" : "Fail";
+}
+
