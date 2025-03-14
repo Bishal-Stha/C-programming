@@ -1,7 +1,13 @@
+/*
+Changes i made to make it work.
+scanf("%s",st[i].name); ❌❌
+scanf(" %[^\n]",st[i].name); one space before % clears the \n from previous input. %[^\n] takes the whole line as a string input. ✅✅
+*/
+
 #include<stdio.h>
 #include<string.h>
-// #include<conio.h>
 char const *passOrFail(float percentage, float marks[]);
+
 int main()
 {
     int n,sum;
@@ -18,11 +24,12 @@ int main()
 
     //Value Assignment
     for(int i=0; i<n; i++){
+        printf("\nEnter Record %d\n",i+1);
         printf("Enter your Roll No: ");
-        scanf("%d",&st[i].id);
+        scanf(" %d",&st[i].id);
 
-        printf("Enter your name: ");
-        scanf("%s", st[i].name);
+        printf("Enter your full name: ");
+        scanf(" %[^\n]", st[i].name);
         // fgets(st[i].name,sizeof(st[i].name),stdin);
         // gets(st[i].name);
         // getchar();
@@ -47,9 +54,20 @@ int main()
 
     printf("\n");
 
-printf("Roll No\t Name\t Physics Math\t C\t DL\t IT\t [%%]\t Status\n");
+// printf("Roll No\t Name\t\t Physics Math\t C\t DL\t IT\t [%%]\t Status\n");
+printf("Output\n");
 for(int i=0; i<n; i++){
-    printf("%d\t %s\t %.2f\t %.2f\t %.2f\t %.2f\t %.2f\t %.2f\t %s\n",st[i].id, st[i].name, st[i].marks[0],st[i].marks[1],st[i].marks[2],st[i].marks[3],st[i].marks[4],percentage[i],passOrFail(percentage[i],st[i].marks));
+    // printf("%d\t %s\t %.2f\t %.2f\t %.2f\t %.2f\t %.2f\t %.2f\t %s\n",st[i].id, st[i].name, st[i].marks[0],st[i].marks[1],st[i].marks[2],st[i].marks[3],st[i].marks[4],percentage[i],passOrFail(percentage[i],st[i].marks));
+    printf("Id: %d\n",st[i].id);
+    printf("Name: %s\n",st[i].name);
+    printf("Physics: %.2f\n",st[i].marks[0]);
+    printf("Mathematics: %.2f\n",st[i].marks[1]);
+    printf("C Programming: %.2f\n",st[i].marks[2]);
+    printf("Digital Logic: %.2f\n",st[i].marks[3]);
+    printf("IT: %.2f\n",st[i].marks[4]);
+    printf("Percentage: %.2f %% \n",percentage[i]);
+    printf("Academic Status: %s\n",passOrFail(percentage[i],st[i].marks));
+    printf("\n");
 }
 }
 
