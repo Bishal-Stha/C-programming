@@ -35,6 +35,7 @@ int main()
         // getchar();
 
         printf("Enter your marks of following subjects\n");
+        printf("Full marks is 60\n");
         for(int j=0; j<5; j++){
             printf("Enter the subject of %s: ",subjects[j]);
             scanf("%f",&st[i].marks[j]);
