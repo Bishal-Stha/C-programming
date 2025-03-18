@@ -1,0 +1,23 @@
+Dynamic Memory Allocation(DMA):
+functions are:
+1. malloc() - memory allocation
+2. calloc() - contagious allocation
+3. realloc()
+4. free()
+
+
+In C, malloc allocates a single block of memory of a specified size, leaving the memory uninitialized (containing garbage values), while calloc allocates multiple blocks of memory, each of a specified size, and initializes all allocated memory to zero. 
+Here's a more detailed breakdown: 
+malloc():
+Allocates a single block of memory.
+Takes one argument: the number of bytes to allocate.
+Returns a pointer to the beginning of the allocated memory, or NULL if allocation fails.
+The allocated memory is not initialized, meaning it contains arbitrary values (garbage).
+calloc():
+Allocates multiple blocks of memory, each of a specified size.
+Takes two arguments: the number of elements to allocate and the size of each element (in bytes).
+Returns a pointer to the beginning of the allocated memory, or NULL if allocation fails.
+The allocated memory is initialized to zero.
+In essence: 
+Use malloc() when you want to allocate a single block of memory and don't need the memory initialized to zero.
+Use calloc() when you want to allocate multiple blocks of memory and need them initialized to zero. 

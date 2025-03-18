@@ -1,10 +1,9 @@
-#include <stdio.h>
-
+#include<stdio.h>
 // Function to modify the value of a variable
-void modifyValue(int *p, int *q) {
-    *p = *p + *q; // Dereference the pointer to modify the value
-	*q = *p - *q; 
-	*p = *p - *q;
+int modifyValue(int *p, int *q){
+    *p = *p + *q;
+    *q = *p - *q;
+    *p = *p - *q;
 }
 
 int main() {
