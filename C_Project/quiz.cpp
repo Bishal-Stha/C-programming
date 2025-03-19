@@ -4,10 +4,7 @@ typedef enum possibleOptions{
     A,B,C,D
 }opt;
 
-void complementGenerator(int n, int score){
-    (float)n, (float)score;
-    (score >= 0.7*n) ? printf("Wow ! you are a genius."): printf("You can do better than this.");
-}
+void complementGenerator(int n, int score);
 
 int main() {
     int n=7, score=0, user_answer;
@@ -53,4 +50,10 @@ int main() {
 
     printf("You scored %d out of %d\n",score,n);
     complementGenerator(n,score);
+}
+
+
+void complementGenerator(int n, int score){
+    (float)n, (float)score;
+    (score >= 0.7*n) ? printf("Wow ! you are a genius."): printf("You can do better than this.");
 }
