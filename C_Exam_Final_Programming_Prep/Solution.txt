@@ -1,0 +1,126 @@
+Group A (2 × 10 Marks)
+1. (10 Marks) Write a C program to input an integer array, find the largest and smallest elements in the array, and display their positions. Use functions for both input and computation.
+
+2. (10 Marks) Explain how pointer arithmetic works in C. Write a program demonstrating pointer arithmetic to print the addresses and values of elements in a given integer array.
+
+Group B (5 × 4 Marks)
+1. (4 Marks) What are the different data types in C? Give examples of their usage in variable declarations.
+
+2. (4 Marks) Explain the difference between a while loop and a do while loop with an example.
+
+3. (4 Marks) Define a structure in C to store details of a book (title, author, and price). Write a code snippet to input and display the details of three books.
+
+4. (4 Marks) What is the purpose of the  and  functions in C? Write a simple program to dynamically allocate and deallocate memory for an integer.
+
+5. (4 Marks) Differentiate between call by value and call by reference in C with examples.
+
+Ans.
+Group 'A'
+
+1 =>
+#include<stdio.h>
+
+// Function prototype
+void input(int arr[], int size);
+void LargeAndSmall(int arr[], int size);
+
+// Function to find largest and smallest elements and their positions
+void LargeAndSmall(int arr[], int size) {
+    int smallPos = 0, largePos = 0;  // Initialize positions
+    int tempS = arr[0], tempL = arr[0];  // Initialize smallest and largest
+
+    for(int i = 1; i < size; i++) {  // Start loop from index 1
+        if(tempL < arr[i]) {
+            tempL = arr[i];
+            largePos = i;
+        }
+
+        if(tempS > arr[i]) {
+            tempS = arr[i];
+            smallPos = i;
+        }
+    }
+
+    // Print results
+    printf("%d is the largest number and is at position %d\n", tempL, largePos);
+    printf("%d is the smallest number and is at position %d\n", tempS, smallPos);
+}
+
+// Function to take array input
+void input(int arr[], int size) {
+    printf("Enter %d elements: ", size);
+    for(int i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
+    }
+}
+
+// Main function
+int main() {
+    int arr[10];
+    input(arr, 10);
+    LargeAndSmall(arr, 10);
+    return 0;
+}
+
+2
+=>
+#include<stdio.h>
+int main(){
+    int* p;
+    int a = 10;
+    p = &a;
+    printf("%d\n",p); 
+    /*
+    p = p+ sizeof(int) 
+    if p = 1000
+    sizeof(int) return 4
+    then
+    p = 1000+ 4
+    so, p =p+1 returns 1004
+    */
+    p = p+1; 
+    
+    printf("%d\n",p);
+    /*
+    p = p - sizeof(int) * i
+    if p = 1000
+    sizeof(int) return 4
+    then
+    p = 1000- 4 *i
+    let i be 5;
+    p = 1000- 4 *5
+    p = 1000- 20
+    p = 980
+    so, p =p-5 returns 1080
+    */
+    p = p-5;
+
+    printf("%d\n",p);
+    p++;
+    printf("%d\n",p);
+}
+
+Group 'B'
+
+1.
+=>There are different datatypes in c programming. Some of them are int, float, char, bool, long, double, etc. 
+int datatype is used to store variable that are integer, float datatype is used to store variable that are of floating point numbers, char is used to store character value, bool is used to store true or false value.
+data types and their format specifier.
+int -> %d
+float -> %f
+char -> %c
+
+#include<stdio.h>
+int main()
+
+{
+    int a =10;
+    char gender = 'M';
+    float pi = 3.1415;
+
+    printf("a is %d\t gender is %c and pi is %f\n",a,gender,pi);
+    return 0;
+}
+
+2. 
+=> do while and while loops are types of loops in c programming language. They might sound and function similar but they have some differences. 

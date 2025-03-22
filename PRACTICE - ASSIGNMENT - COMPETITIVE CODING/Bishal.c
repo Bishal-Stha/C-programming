@@ -1,5 +1,19 @@
+#include<conio.h>
+
 #include<stdio.h>
-int main()
-{
-	printf("My name is Bishal Shrestha.");
+
+void main(){
+
+int i =0,k;
+
+for(k=5;k>=0;k--){
+
+i=i+k;
+
+}
+
+printf("%d\t",i);
+
+getch();
+
 }
