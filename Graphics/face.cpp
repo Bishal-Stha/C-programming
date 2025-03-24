@@ -1,51 +1,13 @@
 #include <graphics.h>
-#include <math.h>
-#include <stdlib.h>
+#include<conio.h>
 
-#define PI 3.14159265
-
-void drawSpiralGalaxy(int centerX, int centerY, int maxRadius) {
-    int color = 1;
-    for (int angle = 0; angle < 360 * 5; angle += 5) { // 5 loops
-        double radian = angle * (PI / 180.0);
-        int radius = maxRadius * angle / (360 * 5); // Gradually increase radius
-        int x = centerX + (int)(radius * cos(radian));
-        int y = centerY + (int)(radius * sin(radian));
-
-        putpixel(x, y, color % 15 + 1); // Cycle through colors
-        color++;
-        delay(10); // Slow the animation slightly
-    }
-}
-
-void drawStars(int numStars, int width, int height) {
-    for (int i = 0; i < numStars; i++) {
-        int x = rand() % width;
-        int y = rand() % height;
-        int color = rand() % 15 + 1;
-        putpixel(x, y, color);
-    }
-}
-
-int main() {
-    int gd = DETECT, gm;
-    initgraph(&gd, &gm, "");
-
-    int width = getmaxx();
-    int height = getmaxy();
-
-    // Draw background stars
-    drawStars(500, width, height);
-
-    // Draw the spiral galaxy
-    int centerX = width / 2;
-    int centerY = height / 2;
-    drawSpiralGalaxy(centerX, centerY, 200);
-
-    // Add some extra sparkles
-    drawStars(300, width, height);
-
-    getch(); // Wait for a key press
-    closegraph(); // Close the graphics window
-    return 0;
+int main(){
+    int gd = DETECT,gm;
+    initgraph(&gd,&gm,"");
+    line(55,105,130,5);//l1 its nothing. 55,105 is where plotting begins and 130,5 is where plotting ends. first is x-axis and second is y.
+    line(130,5,205,105);//l2
+    rectangle(55,105,205,255);//b1
+    rectangle(105,155,155,255);//b2
+    getch();
+    closegraph();
 }

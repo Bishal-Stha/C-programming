@@ -4,13 +4,13 @@
 #include<string.h> 
 
 //Define a structure
-typedef struct Student_details{
+struct Student_details{
     char std_name[20];
     int roll_no;
     float percentage;    
-}sd;
+};
 
-void display(sd std[], int n)
+void display(struct Student_details std[], int n)
 {
     for(int i=0; i<n; i++)
     {
@@ -26,7 +26,7 @@ void display(sd std[], int n)
 
 int main()
 {
-    sd st1[3];
+    struct Student_details st1[3];
 
     strcpy(st1[0].std_name,"Bishal Shrestha");
     st1[0].roll_no = 8;
