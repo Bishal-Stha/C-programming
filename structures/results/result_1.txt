@@ -1,0 +1,10 @@
+Id: 33
+Name: Bishal Shrestha
+Physics: 45.00
+Mathematics: 55.00
+C Programming: 55.00
+Digital Logic: 55.00
+IT: 55.00
+Percentage: 88.00 %
+Academic Status: Pass
+

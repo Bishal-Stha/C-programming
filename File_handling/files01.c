@@ -3,7 +3,10 @@ int main()
 {
     FILE *ptr;
     ptr = fopen("hello.txt","w");
-    fprintf(ptr,"An apple a day keeps the doctor away. Fuck you Prabesh.\n");
+    char str[1000];
+    printf("Write whatever you like: ");
+    scanf(" %[^\n]",str);
+    fprintf(ptr,"%s",str);
     fclose(ptr);
     printf("File written successfully.");
     return 0;
