@@ -1,0 +1,9 @@
+Name: bishal stha
+Roll no: 22
+GPA: 4.00
+Name: alexa virgin
+Roll no: 33
+GPA: 2.50
+Name: ram bhattrai
+Roll no: 5
+GPA: 3.40

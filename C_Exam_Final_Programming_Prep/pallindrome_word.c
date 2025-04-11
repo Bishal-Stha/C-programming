@@ -3,7 +3,9 @@
 
 int main()
 {
-    char *word = "oppo";
+    char word[20];
+    printf("Enter a word: ");
+    gets(word);
     int n = strlen(word);
 
     char check[n];
