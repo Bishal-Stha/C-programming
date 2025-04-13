@@ -9,8 +9,8 @@ int fibonacci(int n){
 int isPrime(int n){
     int count=0;
     int value = fibonacci(n);
-    for(int i=2; i<=n/2; i++){
-        if(n%i==0)
+    for(int i=2; i<=value/2; i++){
+        if(value%i==0)
         count++;
     }
     if(count ==0)
@@ -25,8 +25,8 @@ int main()
     scanf("%d",&n);
 
     if(isPrime(n)==1)
-    printf("number is prime.\n");
+    printf("number (%d) is prime.\n",fibonacci(n));
     else
-    printf("number is not prime.");
+    printf("number (%d) is not prime.",fibonacci(n));
     return 0;
 }

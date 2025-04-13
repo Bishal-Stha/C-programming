@@ -15,6 +15,7 @@ int main() {
     // Draw the door (smaller rectangle)
     rectangle(200, 270, 250, 350);
 
+
    for(int i=0; i<5; i++){
      // human2
      setcolor(3*i-1);
