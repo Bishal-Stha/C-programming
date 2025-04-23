@@ -76,7 +76,7 @@ for(int i=0; i<n; i++){
 
 for (int i = 0; i < n; i++) {
     char fileName[200]; // Buffer to store the full file path
-    sprintf(fileName, "D:\\Bishal_Shrestha\\Programming_I_Learn\\C\\structures\\results\\result_%d.docx", i + 1); // Create a unique file name for each iteration
+    sprintf(fileName, "D:\\Bishal_Shrestha\\Programming_I_Learn\\C\\structures\\results\\result_%d.txt", i + 1); // Create a unique file name for each iteration
 
     p = fopen(fileName, "w"); // Pass the dynamically generated file name
 

@@ -43,7 +43,7 @@ int main() {
             printf("Roll no: %d\n", s.roll_no);
             printf("GPA: %.2f\n", s.gpa);
             found = 1;
-            break;
+            break;s
         }
     }
     fclose(ptr);
